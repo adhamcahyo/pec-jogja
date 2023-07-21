@@ -1,1 +1,13 @@
-nul 
+{% extends 'base.html' %}
+
+{% block title %}Machine Learning Assessment - Assessments{% endblock %}
+
+{% block content %}
+    <h2>Machine Learning Assessment - Assessments</h2>
+    <p>Explore machine learning assessments and assignments for this course.</p>
+    <ul>
+        {% for assessment in assessments %}
+            <li><a href="{% url 'assessment_detail' assessment.id %}">{{ assessment.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

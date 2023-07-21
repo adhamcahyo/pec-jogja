@@ -1,1 +1,14 @@
-nul 
+{% extends 'base.html' %}
+
+{% block title %}Course Detail{% endblock %}
+
+{% block content %}
+    <h2>{{ course.title }}</h2>
+    <p>{{ course.description }}</p>
+    <p>Level: {{ course.level }}</p>
+    <p>Instructor: {{ course.instructor }}</p>
+    <p>Duration: {{ course.duration }}</p>
+    <p>Enrolled Students: {{ course.enrolled_students }}</p>
+     
+    <a href="{% url 'enroll_course' course.id %}">Enroll in this course</a>
+{% endblock %}

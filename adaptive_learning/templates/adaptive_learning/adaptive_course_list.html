@@ -1,1 +1,13 @@
-nul 
+{% extends 'base.html' %}
+
+{% block title %}Adaptive Learning - Courses{% endblock %}
+
+{% block content %}
+    <h2>Adaptive Learning - Courses</h2>
+    <p>Explore adaptive learning courses that will adjust to your learning style and progress.</p>
+    <ul>
+        {% for course in adaptive_courses %}
+            <li><a href="{% url 'adaptive_course_detail' course.id %}">{{ course.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

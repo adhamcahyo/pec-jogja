@@ -1,1 +1,13 @@
-nul 
+{% extends 'base.html' %}
+
+{% block title %}Digital Certification - Certificates{% endblock %}
+
+{% block content %}
+    <h2>Digital Certification - Certificates</h2>
+    <p>Explore digital certificates for completed courses.</p>
+    <ul>
+        {% for certificate in certificates %}
+            <li><a href="{% url 'certificate_detail' certificate.id %}">{{ certificate.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

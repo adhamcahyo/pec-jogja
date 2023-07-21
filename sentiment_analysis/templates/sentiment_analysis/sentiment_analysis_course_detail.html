@@ -1,1 +1,14 @@
-nul 
+{% extends 'base.html' %}
+
+{% block title %}Sentiment Analysis - {{ course.title }}{% endblock %}
+
+{% block content %}
+    <h2>Sentiment Analysis - {{ course.title }}</h2>
+    <p>Get insights into the sentiments of students regarding this course.</p>
+    <h3>Course Description</h3>
+    <p>{{ course.description }}</p>
+    <h3>Sentiment Analysis Results</h3>
+    <p>Positive Sentiment: {{ sentiment_results.positive_percentage }}%</p>
+    <p>Negative Sentiment: {{ sentiment_results.negative_percentage }}%</p>
+    <p>Neutral Sentiment: {{ sentiment_results.neutral_percentage }}%</p>
+{% endblock %}

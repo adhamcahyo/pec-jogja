@@ -1,1 +1,13 @@
-nul 
+{% extends 'base.html' %}
+
+{% block title %}AI Content Recommendation - Recommended Courses{% endblock %}
+
+{% block content %}
+    <h2>AI Content Recommendation - Recommended Courses</h2>
+    <p>Based on your interests and learning history, we recommend the following courses:</p>
+    <ul>
+        {% for course in recommended_courses %}
+            <li><a href="{% url 'course_detail' course.id %}">{{ course.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

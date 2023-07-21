@@ -1,1 +1,60 @@
-nul 
+{% extends 'base.html' %}
+
+{% block title %}Certificate Detail{% endblock %}
+
+{% block content %}
+    <div class="certificate-detail">
+        <h2>{{ certificate.title }}</h2>
+        <p>Recipient: {{ certificate.recipient }}</p>
+        <p>Course: {{ certificate.course }}</p>
+        <p>Issue Date: {{ certificate.issue_date }}</p>
+        <!-- Add more certificate details here -->
+
+        <div class="certificate-image">
+            <!-- Include the certificate image if available -->
+            <img src="{% static 'digital_certification/certificate_image.png' %}" alt="Certificate Image">
+        </div>
+
+        <div class="certificate-description">
+            <p>Congratulations on completing the {{ certificate.course }} course!</p>
+            <p>This digital certificate is awarded to {{ certificate.recipient }} for their outstanding performance and dedication to their studies.</p>
+            <p>The certificate demonstrates their successful completion of the course, gaining valuable knowledge and skills in {{ certificate.course }}.</p>
+            <p>Issue Date: {{ certificate.issue_date }}</p>
+            <p>Certificate ID: {{ certificate.certificate_id }}</p>
+        </div>
+
+        <div class="certificate-signature">
+            <p>Authorized Signature</p>
+            <img src="{% static 'digital_certification/signature.png' %}" alt="Authorized Signature">
+        </div>
+    </div>
+
+    <style>
+        /* Add custom styling for the certificate detail page */
+        .certificate-detail {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .certificate-image img {
+            max-width: 100%;
+            margin: 20px 0;
+        }
+
+        .certificate-description {
+            margin-bottom: 20px;
+        }
+
+        .certificate-signature {
+            text-align: right;
+        }
+
+        .certificate-signature img {
+            max-width: 120px;
+            margin-top: 10px;
+        }
+    </style>
+{% endblock %}

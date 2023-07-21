@@ -1,1 +1,24 @@
-nul 
+
+{% extends 'base.html' %}
+
+{% block title %}Virtual Classroom{% endblock %}
+
+{% block content %}
+    <h2>Virtual Classroom</h2>
+    <p>Welcome to the virtual classroom for {{ course.title }}.</p>
+    <div class="virtual-room">
+        <h3>Live Lecture</h3>
+        <p>The live lecture is about to begin. Please join the session below:</p>
+        <iframe src="https://example.com/virtual-classroom-live" width="800" height="600"></iframe>
+        <br>
+        <h3>Course Materials</h3>
+        <ul>
+            <li><a href="{% url 'download_material' course.id 'lecture_notes' %}">Lecture Notes</a></li>
+            <li><a href="{% url 'download_material' course.id 'assignment_1' %}">Assignment 1</a></li>
+            
+        </ul>
+        <h3>Discussion Forum</h3>
+        <p>Engage with your fellow students and instructors in the discussion forum:</p>
+        <iframe src="https://example.com/virtual-classroom-discussion" width="800" height="600"></iframe>
+    </div>
+{% endblock %}

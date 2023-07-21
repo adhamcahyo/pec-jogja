@@ -1,1 +1,22 @@
-nul 
+{% extends 'base.html' %}
+
+{% block title %}Assessment Detail{% endblock %}
+
+{% block content %}
+    <div class="assessment-detail">
+        <h2>{{ assessment.title }}</h2>
+        <p>{{ assessment.description }}</p>
+        <p>Course: {{ assessment.course }}</p>
+        <p>Due Date: {{ assessment.due_date }}</p>
+        <p>Total Marks: {{ assessment.total_marks }}</p>
+        <!-- Add more assessment details here -->
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="answer">Your Answer:</label>
+            <textarea id="answer" name="answer" rows="4" required></textarea>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock %}

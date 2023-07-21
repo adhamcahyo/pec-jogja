@@ -1,0 +1,41 @@
+
+    /* Add custom styling for the assessment detail page */
+    .assessment-detail {
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .assessment-detail h2 {
+        color: #007BFF;
+        margin-bottom: 10px;
+    }
+
+    .assessment-detail p {
+        margin-bottom: 10px;
+    }
+
+    .assessment-detail label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .assessment-detail textarea {
+        width: 100%;
+        resize: vertical;
+    }
+
+    .assessment-detail input[type="submit"] {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .assessment-detail input[type="submit"]:hover {
+        background-color: #0056b3;
+    }

@@ -1,1 +1,11 @@
-nul 
+{% extends 'base.html' %}
+
+{% block title %}Assignment Detail{% endblock %}
+
+{% block content %}
+    <h2>{{ assignment.title }}</h2>
+    <p>{{ assignment.description }}</p>
+    <p>Due Date: {{ assignment.due_date }}</p>
+   
+    <a href="{% url 'submit_assignment' assignment.id %}">Submit Assignment</a>
+{% endblock %}

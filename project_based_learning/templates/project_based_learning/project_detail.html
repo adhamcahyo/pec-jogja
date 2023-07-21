@@ -1,1 +1,32 @@
-nul 
+{% extends 'base.html' %}
+
+{% block title %}Project Detail{% endblock %}
+
+{% block content %}
+    <div class="project-detail">
+        <h2>{{ project.title }}</h2>
+        <p>{{ project.description }}</p>
+        <p>Course: {{ project.course }}</p>
+        <p>Start Date: {{ project.start_date }}</p>
+        <p>Due Date: {{ project.due_date }}</p>
+        
+        
+
+        <div class="project-submission">
+            {% if project.is_submitted %}
+                <p>Your project has been submitted.</p>
+                <p>Submission Date: {{ project.submission_date }}</p>
+                
+            {% else %}
+                <p>This project requires submission before the due date.</p>
+                <form method="post">
+                    {% csrf_token %}
+                    <label for="project_submission">Your Project Submission:</label>
+                    <textarea id="project_submission" name="project_submission" rows="4" required></textarea>
+                    <br>
+                    <input type="submit" value="Submit Project">
+                </form>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

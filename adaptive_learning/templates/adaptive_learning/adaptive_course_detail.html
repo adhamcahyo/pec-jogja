@@ -1,1 +1,30 @@
-nul 
+{% extends 'base.html' %}
+
+{% block title %}Adaptive Course Detail{% endblock %}
+
+{% block content %}
+    <div class="adaptive-course-detail">
+        <h2>{{ course.title }}</h2>
+        <p>{{ course.description }}</p>
+        <p>Instructor: {{ course.instructor }}</p>
+        <p>Level: {{ course.level }}</p>
+        <p>Duration: {{ course.duration }}</p>
+        <!-- Add more adaptive course details here -->
+
+        <div class="adaptive-content">
+            <h3>Course Content</h3>
+            <ul>
+                {% for module in course.modules %}
+                    <li>{{ module.title }}</li>
+                    <ul>
+                        {% for lesson in module.lessons %}
+                            <li>{{ lesson.title }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <!-- Add adaptive learning content here -->
+    </div>
+{% endblock %}
